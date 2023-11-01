@@ -240,7 +240,11 @@ vim.o.hlsearch = false
 -- Make line numbers default
 vim.wo.number = true
 
+-- Make line numbers relative
 vim.wo.relativenumber = true
+
+-- Minimal number of screen lines to keep above and below the cursor
+vim.o.scrolloff = 8
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
