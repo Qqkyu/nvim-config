@@ -111,13 +111,9 @@ require('lazy').setup({
     },
   },
 
+  -- GitHub theme
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
+    'projekt0n/github-nvim-theme'
   },
 
   {
@@ -237,6 +233,9 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+-- GitHub neovim theme
+vim.cmd('colorscheme github_dark_dimmed')
 
 -- [[ Basic Keymaps ]]
 
