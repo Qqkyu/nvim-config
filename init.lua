@@ -15,7 +15,7 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
-  -- Editor theme
+  -- Theme
   {
     'rose-pine',
     config = function()

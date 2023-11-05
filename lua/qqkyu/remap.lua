@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open netrw file explorer" })
 
 -- Write file to disk
 vim.keymap.set("n", "<C-S>", "<Cmd>write<CR>", { desc = "Save buffer" })
