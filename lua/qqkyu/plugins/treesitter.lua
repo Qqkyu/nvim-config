@@ -7,7 +7,7 @@ return {
     build = ':TSUpdate',
     config = function ()
       require('nvim-treesitter.configs').setup({
-        ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+        ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'markdown' },
 
         -- Autoinstall languages that are not installed
         auto_install = false,
