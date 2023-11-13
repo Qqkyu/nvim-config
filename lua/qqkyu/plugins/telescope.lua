@@ -13,8 +13,8 @@ return {
       },
     },
     keys = {
-      { '<leader>?', "<Cmd>Telescope oldfiles<CR>", desc = '[?] Find recently opened files' },
-      { '<leader><space>', "<Cmd>Telescope buffers<CR>", desc = '[ ] Find existing buffers' },
+      { '<leader>?',       "<Cmd>Telescope oldfiles<CR>", desc = '[?] Find recently opened files' },
+      { '<leader><space>', "<Cmd>Telescope buffers<CR>",  desc = '[ ] Find existing buffers' },
       {
         '<leader>/',
         function()
@@ -26,18 +26,17 @@ return {
         desc = '[/] Fuzzily search in current buffer'
       },
 
-      { '<leader>gf', "<Cmd>Telescope git_files<CR>", desc = 'Search [G]it [F]iles' },
-      { '<leader>sf', "<Cmd>Telescope find_files<CR>", desc = '[S]earch [F]iles' },
-      { '<leader>sh', "<Cmd>Telescope help_tags<CR>", desc = '[S]earch [H]elp' },
-      { '<leader>sw', "<Cmd>Telescope grep_string<CR>", desc = '[S]earch current [W]ord' },
-      { '<leader>sg', "<Cmd>Telescope live_grep<CR>", desc = '[S]earch by [G]rep' },
-      { '<leader>sd', "<Cmd>Telescope diagnostics<CR>", desc = '[S]earch [D]iagnostics' },
-      { '<leader>sr', "<Cmd>Telescope resume<CR>", desc = '[S]earch [R]esume' },
-
-      { '[d', vim.diagnostic.goto_prev, desc = 'Go to previous diagnostic message' },
-      { ']d', vim.diagnostic.goto_next, desc = 'Go to next diagnostic message' },
-      { '<leader>e', vim.diagnostic.open_float, desc = 'Open floating diagnostic message' },
-      { '<leader>q', vim.diagnostic.setloclist, desc = 'Open diagnostics list' },
+      { '<leader>gf', "<Cmd>Telescope git_files<CR>",              desc = 'Search [G]it [F]iles' },
+      { '<leader>sf', "<Cmd>Telescope find_files hidden=true<CR>", desc = '[S]earch [F]iles' },
+      { '<leader>sh', "<Cmd>Telescope help_tags<CR>",              desc = '[S]earch [H]elp' },
+      { '<leader>sw', "<Cmd>Telescope grep_string<CR>",            desc = '[S]earch current [W]ord' },
+      { '<leader>sg', "<Cmd>Telescope live_grep<CR>",              desc = '[S]earch by [G]rep' },
+      { '<leader>sd', "<Cmd>Telescope diagnostics<CR>",            desc = '[S]earch [D]iagnostics' },
+      { '<leader>sr', "<Cmd>Telescope resume<CR>",                 desc = '[S]earch [R]esume' },
+      { '[d',         vim.diagnostic.goto_prev,                    desc = 'Go to previous diagnostic message' },
+      { ']d',         vim.diagnostic.goto_next,                    desc = 'Go to next diagnostic message' },
+      { '<leader>e',  vim.diagnostic.open_float,                   desc = 'Open floating diagnostic message' },
+      { '<leader>q',  vim.diagnostic.setloclist,                   desc = 'Open diagnostics list' },
     },
     config = function()
       require('telescope').setup {
@@ -55,4 +54,3 @@ return {
     end,
   }
 }
-
