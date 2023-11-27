@@ -5,13 +5,14 @@ return {
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     build = ':TSUpdate',
-    config = function ()
+    config = function()
       require('nvim-treesitter.configs').setup({
-        ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'markdown' },
+        ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc',
+          'vim', 'bash', 'markdown' },
 
         -- Autoinstall languages that are not installed
         auto_install = false,
-    
+
         highlight = { enable = true },
         indent = { enable = true },
         incremental_selection = {
@@ -71,4 +72,3 @@ return {
     end
   },
 }
-
