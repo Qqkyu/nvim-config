@@ -13,11 +13,11 @@ return {
         typescriptreact = { "prettier" },
         svelte = { "prettier" },
         css = { "prettier" },
+        scss = { "prettier" },
         html = { "prettier" },
         json = { "prettier" },
         yaml = { "prettier" },
         markdown = { "prettier" },
-        graphql = { "prettier" },
       },
       format_on_save = {
         lsp_fallback = true,
