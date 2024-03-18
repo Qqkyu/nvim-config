@@ -8,7 +8,7 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 
 -- Minimal number of screen lines to keep above and below the cursor
-vim.o.scrolloff = 8
+vim.o.scrolloff = 10
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -51,3 +51,5 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.opt.inccommand = 'split'
+
+vim.opt.cursorline = true
