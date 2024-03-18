@@ -45,3 +45,7 @@ vim.o.expandtab = true
 vim.o.wrap = false
 
 vim.opt.showmode = false
+
+-- Configure how new splits should be opened
+vim.opt.splitright = true
+vim.opt.splitbelow = true
