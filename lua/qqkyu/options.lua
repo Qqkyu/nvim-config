@@ -43,3 +43,5 @@ vim.o.softtabstop = 2
 vim.o.expandtab = true
 
 vim.o.wrap = false
+
+vim.opt.showmode = false
