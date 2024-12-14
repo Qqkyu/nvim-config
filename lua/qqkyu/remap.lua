@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open netrw file explorer" })
+vim.keymap.set("n", "<leader>pv", "<Cmd>Oil<CR>", { desc = "Open oil file explorer" })
 
 -- Copy to clipboard
 vim.keymap.set("v", "<C-c>", [["+y]])
