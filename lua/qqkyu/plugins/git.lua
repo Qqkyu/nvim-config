@@ -18,6 +18,16 @@ return {
 
           -- don't override the built-in and fugitive keymaps
           local gs = package.loaded.gitsigns
+
+          vim.keymap.set('n', '<leader>hb', gs.blame,
+            { buffer = bufnr, desc = 'Blame' })
+
+          vim.keymap.set('n', '<leader>hr', gs.reset_hunk,
+            { buffer = bufnr, desc = 'Reset hunk' })
+
+          vim.keymap.set('n', '<leader>hd', function() gs.diffthis('~') end,
+            { buffer = bufnr, desc = 'Diff this ~' })
+
           vim.keymap.set({ 'n', 'v' }, ']c', function()
             if vim.wo.diff then
               return ']c'
@@ -27,6 +37,7 @@ return {
             end)
             return '<Ignore>'
           end, { expr = true, buffer = bufnr, desc = 'Jump to next hunk' })
+
           vim.keymap.set({ 'n', 'v' }, '[c', function()
             if vim.wo.diff then
               return '[c'
