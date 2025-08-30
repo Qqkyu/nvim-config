@@ -39,28 +39,29 @@ return {
           end)
 
           -- Actions
-          map('n', '<leader>hs', gitsigns.stage_hunk)
-          map('n', '<leader>hr', gitsigns.reset_hunk)
+          map('n', '<leader>hs', gitsigns.stage_hunk, { desc = "Stage hunk" })
+          map('n', '<leader>hr', gitsigns.reset_hunk, { desc = "Reset hunk" })
 
-          map('n', '<leader>hp', gitsigns.preview_hunk)
-          map('n', '<leader>hi', gitsigns.preview_hunk_inline)
+          map('n', '<leader>hp', gitsigns.preview_hunk, { desc = "Preview hunk" })
+          map('n', '<leader>hi', gitsigns.preview_hunk_inline, { desc = "Preview hunk inline" })
 
           map('n', '<leader>hb', function()
             gitsigns.blame_line({ full = true })
-          end)
+          end, { desc = "Show blame for the current line" })
 
-          map('n', '<leader>hd', gitsigns.diffthis)
+          map('n', '<leader>hd', gitsigns.diffthis, { desc = "Show diff of the current buffer" })
 
           map('n', '<leader>hD', function()
             gitsigns.diffthis('~')
-          end)
+          end, { desc = "Show diff of the current buffer" })
 
-          map('n', '<leader>hQ', function() gitsigns.setqflist('all') end)
-          map('n', '<leader>hq', gitsigns.setqflist)
+          map('n', '<leader>hQ', function() gitsigns.setqflist('all') end,
+            { desc = "Show hunks quickfix list for whole repository" })
+          map('n', '<leader>hq', gitsigns.setqflist, { desc = "Show hunks quickfix list" })
 
           -- Toggles
-          map('n', '<leader>tb', gitsigns.toggle_current_line_blame)
-          map('n', '<leader>tw', gitsigns.toggle_word_diff)
+          map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = "Toggle inline blame" })
+          map('n', '<leader>tw', gitsigns.toggle_word_diff, { desc = "Toggle inline word diff" })
 
           -- Text object
           map({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
