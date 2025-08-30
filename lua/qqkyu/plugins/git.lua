@@ -22,49 +22,50 @@ return {
           end
 
           -- Navigation
-          map({ 'n', 'v' }, ']c', function()
+          map('n', ']c', function()
             if vim.wo.diff then
-              return ']c'
+              vim.cmd.normal { ']c', bang = true }
             else
-              gitsigns.nav_hunk('next')
+              gitsigns.nav_hunk 'next'
             end
-          end)
+          end, { desc = 'Jump to next git [c]hange' })
 
-          map({ 'n', 'v' }, '[c', function()
+          map('n', '[c', function()
             if vim.wo.diff then
-              return '[c'
+              vim.cmd.normal { '[c', bang = true }
             else
-              gitsigns.nav_hunk('prev')
+              gitsigns.nav_hunk 'prev'
             end
-          end)
+          end, { desc = 'Jump to previous git [c]hange' })
 
           -- Actions
-          map('n', '<leader>hs', gitsigns.stage_hunk, { desc = "Stage hunk" })
-          map('n', '<leader>hr', gitsigns.reset_hunk, { desc = "Reset hunk" })
+          map('v', '<leader>hs', function()
+            gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
+          end, { desc = 'git [s]tage hunk' })
+          map('v', '<leader>hr', function()
+            gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
+          end, { desc = 'git [r]eset hunk' })
 
-          map('n', '<leader>hp', gitsigns.preview_hunk, { desc = "Preview hunk" })
-          map('n', '<leader>hi', gitsigns.preview_hunk_inline, { desc = "Preview hunk inline" })
+          map('n', '<leader>hp', gitsigns.preview_hunk, { desc = "git [p]review hunk" })
+          map('n', '<leader>hi', gitsigns.preview_hunk_inline, { desc = "git preview hunk [i]nline" })
 
           map('n', '<leader>hb', function()
             gitsigns.blame_line({ full = true })
-          end, { desc = "Show blame for the current line" })
+          end, { desc = "git [b]lame line" })
 
-          map('n', '<leader>hd', gitsigns.diffthis, { desc = "Show diff of the current buffer" })
+          map('n', '<leader>hd', gitsigns.diffthis, { desc = "git [d]iff against index" })
 
           map('n', '<leader>hD', function()
             gitsigns.diffthis('~')
-          end, { desc = "Show diff of the current buffer" })
+          end, { desc = "git [D]iff against last commit" })
 
           map('n', '<leader>hQ', function() gitsigns.setqflist('all') end,
             { desc = "Show hunks quickfix list for whole repository" })
           map('n', '<leader>hq', gitsigns.setqflist, { desc = "Show hunks quickfix list" })
 
           -- Toggles
-          map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = "Toggle inline blame" })
-          map('n', '<leader>tw', gitsigns.toggle_word_diff, { desc = "Toggle inline word diff" })
-
-          -- Text object
-          map({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
+          map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = "[T]oggle git show [b]lame line" })
+          map('n', '<leader>tw', gitsigns.toggle_word_diff, { desc = "[T]oggle inline [w]ord diff" })
         end,
       }
     end,
