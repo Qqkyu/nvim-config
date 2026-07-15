@@ -17,8 +17,6 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-vim.keymap.set('n', '<leader>cc', '<cmd>ClaudeCode<CR>', { desc = 'Toggle Claude Code' })
-
 -- Write file to disk
 vim.keymap.set("n", "<C-S>", "<Cmd>write<CR>", { desc = "Save buffer" })
 
